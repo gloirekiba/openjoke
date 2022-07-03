@@ -1,20 +1,41 @@
 const express = require("express");
 
-// const Author = require("../models/joke");
+const Joke = require("../models/joke");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Joke list");
-});
+router
+  .route("/")
+  .get((req, res) => {
+    res.render("joke");
+  })
+  .post(async (req, res) => {
+    const joke = await new Joke({
+      joke: req.body.joke,
+    });
+
+    joke.save((err, newJoke) => {
+      if (err) {
+        res.render("joke/new", {
+          payload: joke,
+          alert: {
+            type: "danger",
+            message: "Something went wrong",
+          },
+        });
+      }
+      res.render("joke/new", {
+        alert: {
+          payload: joke,
+          type: "success",
+          message: "Joke added successfully",
+        },
+      });
+    });
+  });
 
 router.get("/new", (req, res) => {
   res.render("joke/new");
-});
-
-router.post("/", (req, res) => {
-  res.send("Joke params");
-  console.log(req.params);
 });
 
 module.exports = router;
