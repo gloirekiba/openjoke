@@ -6,12 +6,14 @@ const router = express.Router();
 
 router
   .route("/")
-  .get((req, res) => {
-    res.render("joke");
+  .get(async (req, res) => {
+    const jokes = await Joke.find({});
+    res.render("joke", { jokes });
   })
   .post(async (req, res) => {
     const joke = await new Joke({
       joke: req.body.joke,
+      author: req.body.author,
     });
 
     joke.save((err, newJoke) => {
