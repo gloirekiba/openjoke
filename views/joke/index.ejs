@@ -1,1 +1,10 @@
-All author list
+<hr />
+<a href="/joke/new">Add new Joke</a>
+
+<h1>All joke list</h1>
+
+<ul>
+  <% jokes.forEach(({joke, author}) => { %>
+  <li><%= joke %> || by <%= author %></li>
+  <%}); %>
+</ul>
