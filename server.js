@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const expressEjsLayout = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 
 const indexRouter = require("./routes/index");
@@ -17,9 +16,7 @@ const app = express();
 
 app
   .set("views", path.resolve(__dirname, "views"))
-  .set("view engine", "ejs")
-  .set("layout", "layout/layout")
-  .use(expressEjsLayout)
+  .set("view engine", "pug")
   .use(bodyParser.urlencoded({ limit: "10mb", extended: false }))
   .use(express.static(path.resolve(__dirname, "public")));
 
