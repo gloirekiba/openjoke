@@ -3,6 +3,8 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
   }
   input,
   textarea {
@@ -16,8 +18,8 @@
 </style>
 
 <div class="container">
-  <h1>Add new joke :)</h1>
   <form action="/joke" method="post">
+    <h1>Add new joke :)</h1>
     <input name="author" type="text" placeholder="author" />
     <textarea name="joke" cols="30" rows="10" placeholder="joke"></textarea>
     <button type="submit">Submit</button>
