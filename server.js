@@ -24,7 +24,6 @@ app
   .use(express.static(path.resolve(__dirname, "public")));
 
 // Routing
-
 app.use("/", indexRouter);
 app.use("/joke", jokeRouter);
 
