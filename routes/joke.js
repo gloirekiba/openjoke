@@ -11,29 +11,26 @@ router
     res.render("joke", { jokes });
   })
   .post(async (req, res) => {
-    const joke = await new Joke({
-      joke: req.body.joke,
-      author: req.body.author,
-    });
-
-    joke.save((err, newJoke) => {
-      if (err) {
-        res.render("joke/new", {
-          payload: joke,
-          alert: {
-            type: "danger",
-            message: "Something went wrong",
-          },
-        });
-      }
+    try {
+      await new Joke({
+        joke: req.body.joke,
+        author: req.body.author,
+      }).save();
       res.render("joke/new", {
         alert: {
-          payload: joke,
           type: "success",
           message: "Joke added successfully",
         },
       });
-    });
+    } catch (error) {
+      console.log(error);
+      res.render("joke/new", {
+        alert: {
+          type: "danger",
+          message: "Something went wrong",
+        },
+      });
+    }
   });
 
 router.get("/new", (req, res) => {
