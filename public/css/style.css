@@ -26,7 +26,7 @@
 
 body {
   font-family: "Poppins", var(--alt-ff);
-  padding: 10em 0 2em;
+  padding: 15em 0 2em;
 }
 
 img {
@@ -51,6 +51,16 @@ button {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  opacity: 0.7;
 }
 
 .alert {
@@ -146,10 +156,10 @@ button {
 }
 
 .hero-text {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   font-weight: 400;
   max-width: 90ch;
-  margin-bottom: 4.5em;
+  margin-bottom: 4em;
   color: var(--color-text);
 }
 
@@ -181,9 +191,6 @@ button {
 }
 
 .joke-new {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 5rem;
   color: var(--color-primary);
   font-weight: 700;
@@ -203,7 +210,13 @@ button {
 }
 
 @media only screen and (max-width: 40em) {
+  body {
+    padding-top: 10em;
+  }
   .hero {
     flex-direction: column;
+  }
+  .hero-img {
+    margin-top: 5em;
   }
 }
