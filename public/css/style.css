@@ -102,7 +102,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 0;
+  padding: 1em 0;
 }
 
 .nav-list {
@@ -118,26 +118,25 @@ button {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   font-family: "Arvo", var(--alt-ff);
 }
 
 .nav-link {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   text-transform: capitalize;
   font-family: "PT Sans", var(--alt-ff);
 }
 
 /* Hero */
 .hero {
-  margin-top: 5em;
   display: flex;
   justify-content: space-between;
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: clamp(3rem, 4vw, 5rem);
   max-width: 20ch;
   text-transform: uppercase;
   font-weight: 700;
@@ -150,7 +149,7 @@ button {
   font-size: 2rem;
   font-weight: 400;
   max-width: 90ch;
-  margin-bottom: 3em;
+  margin-bottom: 4.5em;
   color: var(--color-text);
 }
 
@@ -201,4 +200,10 @@ button {
 .joke-new:hover {
   background-color: var(--color-secondary);
   color: var(--color-white);
+}
+
+@media only screen and (max-width: 40em) {
+  .hero {
+    flex-direction: column;
+  }
 }
