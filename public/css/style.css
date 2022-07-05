@@ -44,6 +44,13 @@ ul {
 button {
   border: none;
   background: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
 }
 
 /* Global */
@@ -57,6 +64,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .btn:hover {
@@ -209,6 +220,44 @@ button {
 .joke-new:hover {
   background-color: var(--color-secondary);
   color: var(--color-white);
+}
+
+/* Login form */
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.form-title {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.form-input {
+  font-size: 2rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.5em 0;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.144);
+  transition: border-color 0.4s;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--color-secondary);
+}
+
+.form-btn {
+  font-size: 1.6rem;
+  margin-top: 1em;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: var(--color-secondary);
+  padding: 1em;
 }
 
 @media only screen and (max-width: 40em) {
