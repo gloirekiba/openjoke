@@ -1,10 +1,19 @@
-<hr />
-<a href="/joke/new">Add new Joke</a>
+extends ../partials/layout
 
-<h1>All joke list</h1>
+block content
+  mixin joke(text)
+    .joke
+      p.joke-text= text
 
-<ul>
-  <% jokes.forEach(({joke, author}) => { %>
-  <li><%= joke %> || by <%= author %></li>
-  <%}); %>
-</ul>
+  .container
+    .joke-container
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Omnis ut ipsa nostrum aperiam, iste laudantium sapiente odio suscipit asperiores perspiciatis obcaecati porro maxime reprehenderit voluptatibus debitis modi reiciendis dignissimos tempora! Dicta ipsa quaerat ipsam minus distinctio, accusamus sequi sapiente porro rem neque consequuntur temporibus laudantium aspernatur debitis odit aperiam iusto.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+      +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
+       
