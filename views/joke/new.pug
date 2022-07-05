@@ -1,27 +1,5 @@
-<style>
-  form {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  input,
-  textarea {
-    padding: 1em;
-  }
+extends ../partials/layout
 
-  button {
-    cursor: pointer;
-    padding: 1em;
-  }
-</style>
-
-<div class="container">
-  <form action="/joke" method="post">
-    <h1>Add new joke :)</h1>
-    <input name="author" type="text" placeholder="author" />
-    <textarea name="joke" cols="30" rows="10" placeholder="joke"></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</div>
+block content
+  .container
+    h1 Add new Joke
