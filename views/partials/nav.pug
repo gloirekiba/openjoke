@@ -1,13 +1,13 @@
 mixin navItem(text, href)
   li.nav-item
     a.nav-link(href=href)= text
-      if block
+      if (block)
         block
 
 nav(class="nav")
   .container
     .nav-content
-      a(href="/" class="logo") OPENJOKE
+      a.logo(href="/") OPENJOKE
       ul.nav-list 
         +navItem("login", "/login")
         +navItem("", "https://google.com")
