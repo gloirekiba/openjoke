@@ -2,11 +2,11 @@ extends ../partials/layout
 
 block content
   mixin joke(text)
-    .joke
-      p.joke-text= text
-
+    a.joke(href="/joke/10")= text
+      
   .container
     .joke-container
+      a.joke-new(href='/joke/new') &#43;
       +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
       +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
       +joke("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam provident eos illum atque veniam alias tempora fugit pariatur recusandae sed.")
