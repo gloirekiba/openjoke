@@ -41,6 +41,12 @@ ul {
   list-style-type: none;
 }
 
+button,
+input,
+.form-hint {
+  font-family: "Poppins", var(--alt-ff);
+}
+
 button {
   border: none;
   background: none;
@@ -258,6 +264,10 @@ input {
   font-weight: 700;
   background-color: var(--color-secondary);
   padding: 1em;
+}
+
+.form-hint {
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 40em) {
