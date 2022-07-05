@@ -5,8 +5,12 @@ const jokeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  author: {
-    type: String,
+  category: {
+    type: Array,
+    required: true,
+  },
+  contributor: {
+    type: Array,
     required: true,
   },
 });
