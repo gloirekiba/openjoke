@@ -1,4 +1,6 @@
-if (process.env.NODE_ENV !== "production") {
+const isLocalEnv = process.env.NODE_ENV !== "production";
+
+if (isLocalEnv) {
   require("dotenv").config();
 }
 
@@ -10,8 +12,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const jokeRouter = require("./routes/joke");
 
-// Setup
-
+// Initialize app
 const app = express();
 
 app
@@ -19,18 +20,23 @@ app
   .set("view engine", "pug")
   .use(bodyParser.urlencoded({ limit: "10mb", extended: false }))
   .use(express.static(path.resolve(__dirname, "public")));
+if (isLocalEnv) {
+  const morgan = require("morgan");
+  app.use(morgan("dev"));
+}
 
-// Routing
+// Routes
 app.use("/", indexRouter);
 app.use("/joke", jokeRouter);
 
-// Database
+// Connect to database
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 
 db.on("error", (err) => console.log(err));
 db.once("open", () => console.log("connected to mongodb"));
 
+// Start server
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on port 3000`);
 });
