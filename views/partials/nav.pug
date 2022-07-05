@@ -1,10 +1,8 @@
 mixin navItem(text, href)
   li.nav-item
-    if block
-      a.nav-link(href=href)
+    a.nav-link(href=href)= text
+      if block
         block
-    else
-      a.nav-link(href=href)= text
 
 nav(class="nav")
   .container
