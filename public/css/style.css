@@ -6,6 +6,7 @@
     font-family: 'PT Sans', sans-serif;
 */
 
+/* Reset */
 *,
 ::before,
 ::after {
@@ -25,7 +26,7 @@
 
 body {
   font-family: "Poppins", var(--alt-ff);
-  padding-bottom: 2em;
+  padding: 10em 0 2em;
 }
 
 img {
@@ -45,6 +46,7 @@ button {
   background: none;
 }
 
+/* Global */
 .container {
   width: 95%;
   max-width: 1200px;
@@ -85,8 +87,14 @@ button {
   color: var(--color-text);
 }
 
+/* Nav */
+
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   margin-bottom: 1em;
+  width: 100%;
   background-color: var(--color-secondary);
 }
 
@@ -121,6 +129,7 @@ button {
   font-family: "PT Sans", var(--alt-ff);
 }
 
+/* Hero */
 .hero {
   margin-top: 5em;
   display: flex;
@@ -157,6 +166,7 @@ button {
   cursor: pointer;
 }
 
+/* Joke */
 .joke-container {
   display: grid;
   gap: 1em;
