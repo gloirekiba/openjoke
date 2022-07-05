@@ -31,6 +31,11 @@ ul {
   list-style-type: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 .container {
   width: 95%;
   max-width: 1200px;
@@ -103,4 +108,46 @@ ul {
 .nav-link {
   font-size: 1.8rem;
   font-family: "PT Sans", var(--alt-ff);
+}
+
+.hero {
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 5rem;
+  max-width: 20ch;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Arvo", var(--alt-ff);
+  /* color: var(--color-text); */
+  /* color: #aa767c; */
+  color: #6b9ac4;
+  margin-bottom: 0.425em;
+}
+
+.hero-text {
+  font-size: 2rem;
+  font-weight: 400;
+  max-width: 90ch;
+  margin-bottom: 3em;
+  color: var(--color-text);
+}
+
+.hero-btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1.25em 2.5em;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
