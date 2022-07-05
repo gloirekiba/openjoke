@@ -6,7 +6,6 @@ if (isLocalEnv) {
 
 const path = require("path");
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const indexRouter = require("./routes/index");
@@ -18,7 +17,7 @@ const app = express();
 app
   .set("views", path.resolve(__dirname, "views"))
   .set("view engine", "pug")
-  .use(bodyParser.urlencoded({ limit: "10mb", extended: false }))
+  .use(express.urlencoded({ extended: false }))
   .use(express.static(path.resolve(__dirname, "public")));
 if (isLocalEnv) {
   const morgan = require("morgan");
