@@ -1,0 +1,22 @@
+extends ../partials/layout
+
+block content 
+  .container
+    form.login-form(
+      method="POST"
+      action="/login"
+    )
+      h2(class="title form-title text-center") Login
+      input.form-input(
+        type="text"
+        name="username"
+        placeholder="username"
+        autocomplete="off"
+        autofocus
+      )
+      input.form-input(
+        type="password"
+        name="password"
+        placeholder="password"
+      )
+      button.form-btn(type="submit") Submit
