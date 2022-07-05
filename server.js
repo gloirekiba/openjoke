@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const jokeRouter = require("./routes/joke");
 const loginRouter = require("./routes/login");
+const registerRouter = require("./routes/register");
 
 // Initialize app
 const app = express();
@@ -29,6 +30,7 @@ if (isLocalEnv) {
 app.use("/", indexRouter);
 app.use("/joke", jokeRouter);
 app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 // Connect to database
 mongoose.connect(process.env.DATABASE_URL);
