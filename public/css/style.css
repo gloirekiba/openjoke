@@ -27,6 +27,14 @@ body {
   font-family: "Poppins", var(--alt-ff);
 }
 
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -116,18 +124,12 @@ button {
   justify-content: space-between;
 }
 
-img {
-  max-width: 100%;
-}
-
 .hero-title {
   font-size: 5rem;
   max-width: 20ch;
   text-transform: uppercase;
   font-weight: 700;
   font-family: "Arvo", var(--alt-ff);
-  /* color: var(--color-text); */
-  /* color: #aa767c; */
   color: #6b9ac4;
   margin-bottom: 0.425em;
 }
@@ -150,4 +152,35 @@ img {
   color: var(--color-white);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.joke-container {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.joke {
+  height: 200px;
+  padding: 1em;
+  font-size: 1.6rem;
+  overflow: hidden;
+  border: 1px solid var(--color-secondary);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.joke-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--color-secondary);
+  transition: color 0.4s ease-in-out;
+}
+
+.joke:hover {
+  background-color: var(--color-secondary);
+}
+
+.joke:hover .joke-text {
+  color: var(--color-white);
 }
