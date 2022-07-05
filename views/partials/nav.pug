@@ -1,9 +1,19 @@
+mixin navItem(text, href)
+  li.nav-item
+    if block
+      a.nav-link(href=href)
+        block
+    else
+      a.nav-link(href=href)= text
+
 nav(class="nav")
   .container
     .nav-content
       a(href="/" class="logo") 😂PENJOKE
-      ul(class="nav-list")
-        li(class="nav-item")
-          a(href="/" class="nav-link") Jokes
-        li
-          a(href="#" class="nav-link") Github
+      ul.nav-list 
+        +navItem("login", "/login")
+        +navItem("", "https://google.com")
+          i.ri-github-fill.ri-2x
+
+
+//- i.ri-github-fill
