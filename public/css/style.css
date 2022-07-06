@@ -231,7 +231,8 @@ input {
 
 /* Login form */
 
-.login-form {
+.login-form,
+.register-form {
   max-width: 400px;
   margin: 0 auto;
   display: flex;
