@@ -1,1 +1,26 @@
-extends ./partials/layout
+extends ../partials/layout
+
+
+block content
+  block content 
+  .container
+    form.register-form(
+      method="POST"
+      action="/register"
+    )
+      h2(class="title form-title text-center") Register
+      input.form-input(
+        type="text"
+        name="username"
+        placeholder="username"
+        autocomplete="off"
+        autofocus
+      )
+      input.form-input(
+        type="password"
+        name="password"
+        placeholder="password"
+      )
+      button.form-btn(type="submit") Submit
+      p.form-hint Already have an account? 
+        a.hint-link(href="/login") Login
