@@ -1,17 +1,30 @@
 const mongoose = require("mongoose");
 
 const jokeSchema = new mongoose.Schema({
-  joke: {
+  content: {
     type: String,
     required: true,
   },
-  category: {
-    type: Array,
+  categories: {
+    type: [String],
+    required: false,
+  },
+  contributors: {
+    type: [String],
     required: true,
   },
-  contributor: {
-    type: Array,
-    required: true,
+  createdAt: {
+    type: Date,
+    default: () => new Date().toISOString(),
+    immutable: true,
+  },
+  lastUpdated: {
+    type: Date,
+    default: () => new Date().toISOString(),
+  },
+  aproved: {
+    type: Boolean,
+    default: false,
   },
 });
 
