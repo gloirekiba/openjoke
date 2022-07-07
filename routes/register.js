@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Contributor = require("../models/contributor");
+const Contributor = require("../models/Contributor");
 
 const router = express.Router();
 
