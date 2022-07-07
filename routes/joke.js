@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Joke = require("../models/joke");
+const Joke = require("../models/Joke");
 
 const router = express.Router();
 
