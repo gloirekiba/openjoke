@@ -7,6 +7,7 @@ const jokeSchema = new mongoose.Schema({
   },
   categories: {
     type: [String],
+    lowercase: true,
     required: false,
   },
   contributors: {
